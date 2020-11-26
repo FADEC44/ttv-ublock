@@ -1,4 +1,3 @@
-const CODE = `
 const origFetch = window.fetch;
 window.fetch = (url, init, ...args) => {
 	try {
@@ -19,9 +18,3 @@ window.fetch = (url, init, ...args) => {
 	} catch (e) {}
 	return origFetch(url, init, ...args);
 };
-`;
-
-// To access the page's JS context, we need to inject an actual script
-const script = document.createElement("script");
-script.textContent = CODE;
-document.documentElement.prepend(script);
